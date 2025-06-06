@@ -48,7 +48,7 @@ def ai(prompt: str) -> str:
 if __name__ == "__main__":
     say("Hello, I am SAM A.I.")
 
-    apps = [["Spotify", "C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe"]]
+    apps = [["Spotify", "C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe"],["File","shell:MyComputerFolder"]]
     sites = [
         ["Youtube", "https://www.youtube.com/"],
         ["Google", "https://www.google.com/"],
@@ -86,5 +86,9 @@ if __name__ == "__main__":
         elif "SAM tell me" in text or "question" in text or "what is" in text:
             say("Yes sir??")
             user_prompt = voice()
+            print("Researching.....")
             ai_response = ai(user_prompt)
             say(ai_response)
+        if any(phrase in text for phrase in ["exit", "quit", "close", "stop", "goodbye","rest"]):
+            say("Shutting down sir. Goodbye.")
+            break
