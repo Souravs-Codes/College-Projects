@@ -1,37 +1,49 @@
 import os
+import urllib.parse
 import speech_recognition as sr
 import webbrowser
 import datetime as dt
 from huggingface_hub import InferenceClient
 import win32com.client as win32
+import pywhatkit as pw
+import pyautogui as pg
+import time
+
+
+
+
+
 
 # Text-to-speech setup
 speaker = win32.Dispatch("SAPI.SpVoice")
+HF_TOKEN = os.getenv("HF_TOKEN")
+client = InferenceClient(token=HF_TOKEN) if HF_TOKEN else None
 
 def say(text):
     print(f"SAM: {text}")
     speaker.Speak(text)
 
 
+# Chat replies and basic conversation
 def chat(text):
-    prompt = f" {text}"
-    response = ai(prompt)
-    say(response)
     token = os.getenv("HF_TOKEN")
-    if not token:
-        return "❌ Hugging Face token not set in environment."
-
-    client = InferenceClient(token=token)
+    if not token or not client:
+        error_msg = "❌ Hugging Face token not set or client not initialized."
+        say(error_msg)
+        return error_msg
 
     try:
         completion = client.chat.completions.create(
-            model="meta-llama/Llama-3-8B-Instruct",
-            messages=[{"role": "user", "content": prompt}],
+            model="EleutherAI/gpt-j-6b",
+            messages=[{"role": "user", "content": text}],
         )
-        return completion.choices[0].message.content.strip()
+        response = completion.choices[0].message.content.strip()
+        say(response)
+        return response
     except Exception as e:
-        return f"❌ AI error: {e}"
-
+        error_msg = f"❌ AI error: {e}"
+        say(error_msg)
+        return error_msg
 
 # Voice input from user
 def voice():
@@ -49,23 +61,31 @@ def voice():
 
 # Hugging Face AI interaction
 def ai(prompt: str) -> str:
-    token = os.getenv("HF_TOKEN")
-    if not token:
-        return "❌ Hugging Face token not set in environment."
-
-    client = InferenceClient(token=token)
+    if not HF_TOKEN or not client:
+        return "❌ Hugging Face token not set or client not initialized."
 
     try:
         completion = client.chat.completions.create(
-            model="meta-llama/Llama-3.1-8B-Instruct",
+            model="EleutherAI/gpt-j-6b",
             messages=[{"role": "user", "content": prompt}],
         )
         return completion.choices[0].message.content.strip()
     except Exception as e:
         return f"❌ AI error: {e}"
 
+#searching in youtube
+def search_youtube(query):
+    search = urllib.parse.quote_plus(query)
+    url = f"https://www.youtube.com/results?search_query={search}"
+    webbrowser.open(url)
+
+peoples=[["Kushan","8092876654"],["Me","7061973898"],["Papa","6205143357"],["Mummy","9132356424"],["Samrat","7004936302"],["Dadai","7004936302"],["Aryan","9142446712"]]
+
 # Main assistant loop
 if __name__ == "__main__":
+
+
+
     say("Hello, I am SAM A.I.")
 
     apps = [["Spotify", "C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe"],["File","shell:MyComputerFolder"]]
@@ -75,45 +95,82 @@ if __name__ == "__main__":
         ["Wikipedia", "https://www.wikipedia.org/"]
     ]
 
+
     while True:
         text = voice().lower()
+        handled=False
 
         # Open websites
         for site in sites:
             if f"open {site[0].lower()}" in text:
                 webbrowser.open(site[1])
                 say(f"Opening {site[0]} sir...")
+                handled = True
                 break
 
         # Open applications
         for app in apps:
+            running_apps={}
             if f"open {app[0].lower()}" in text:
                 os.startfile(app[1])
                 say(f"Opening {app[0]} sir...")
+                handled = True
                 break
+
 
         # Report time
         if "the time" in text:
             current_time = dt.datetime.now().strftime("%I:%M:%p")
             say(f"Sir, the time is {current_time}")
+            handled = True
+            continue
 
         # Report date
         elif "date" in text:
             current_date = dt.datetime.now().strftime("%d-%m-%Y")
             say(f"Sir, the date is {current_date}")
+            handled = True
+            continue
 
-        # Ask AI
-        elif "SAM tell me" in text or "question" in text or "what is" in text:
-            say("Yes sir??")
-            user_prompt = voice()
-            print("Researching.....")
-            ai_response = ai(user_prompt)
-            say(ai_response)
+
+
+
+        elif "search youtube" in text:
+            say("What should I search on YouTube?")
+            query = voice()
+            say(f"Searching YouTube for {query}")
+            search_youtube(query)
+            handled = True
+        elif "search google" in text:
+            say("What should I search on Google?")
+            query = voice()
+            say(f"Searching Google for {query}")
+            webbrowser.open(f"https://www.google.com/search?q={query}")
+            handled = True
+
+        for person in peoples:
+            if f"send message to {person[0].lower()}" in text:
+                say("What message should I send Sir?")
+                query = voice()
+
+                os.system("start whatsapp:")  # On Windows
+
+                time.sleep(5)  # wait for app to open
+
+                pg.click(182, 151)
+                pg.write(person[0])
+                pg.click(324, 242)
+                time.sleep(0.5)
+                pg.press("enter")
+                pg.click(324, 242)
+                time.sleep(0.5)
+                pg.write(query)
+                pg.press("enter")
+
+
 
         #Shutting down
-        elif any(phrase in text for phrase in ["exit", "quit", "close", "stop", "goodbye","rest"]):
+        if any(phrase in text for phrase in ["exit", "quit", "stop", "goodbye","rest"]):
             say("Shutting down sir. Goodbye.")
             break
 
-        else:
-            chat(text)

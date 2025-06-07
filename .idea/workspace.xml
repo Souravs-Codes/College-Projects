@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fddbc2b0-d423-4fb8-bb95-9c0410a7e322" name="Changes" comment="update 3(making it close as commanded)">
+    <list default="true" id="fddbc2b0-d423-4fb8-bb95-9c0410a7e322" name="Changes" comment="update 4(making it to chat and do conversation)">
+      <change beforePath="$PROJECT_DIR$/.idea/PythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAM.py" beforeDir="false" afterPath="$PROJECT_DIR$/SAM.py" afterDir="false" />
     </list>
@@ -43,27 +44,77 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.SAM.executor": "Run",
-    "Python.openai test.executor": "Run",
-    "Python.openai_test.executor": "Run",
-    "Python.test_token (2).executor": "Run",
-    "Python.test_token.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "aws.codewhisperer",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.SAM (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.SAM (3).executor&quot;: &quot;Run&quot;,
+    &quot;Python.SAM.executor&quot;: &quot;Run&quot;,
+    &quot;Python.openai test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.openai_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_token (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_token.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.SAM">
+    <configuration name="SAM (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="HF_TOKEN" value="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" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv310" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv310/SAM.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SAM (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="HF_TOKEN" value="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" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv310" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv310/SAM.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="SAM" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -164,8 +215,9 @@
       <list>
         <item itemvalue="Python.SAM" />
         <item itemvalue="Python.openai_test" />
-        <item itemvalue="Python.test_token (2)" />
         <item itemvalue="Python.test_token" />
+        <item itemvalue="Python.SAM (3)" />
+        <item itemvalue="Python.SAM (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +246,18 @@
       <workItem from="1749271181888" duration="1760000" />
       <workItem from="1749272960433" duration="86000" />
       <workItem from="1749273054502" duration="305000" />
-      <workItem from="1749273374417" duration="1261000" />
+      <workItem from="1749273374417" duration="7957000" />
+      <workItem from="1749281480171" duration="1673000" />
+      <workItem from="1749283183877" duration="215000" />
+      <workItem from="1749283416033" duration="964000" />
+      <workItem from="1749284411509" duration="313000" />
+      <workItem from="1749285089029" duration="2878000" />
+      <workItem from="1749289044820" duration="2935000" />
+      <workItem from="1749292028290" duration="2669000" />
+      <workItem from="1749294879013" duration="768000" />
+      <workItem from="1749295679355" duration="268000" />
+      <workItem from="1749305577016" duration="3210000" />
+      <workItem from="1749309097422" duration="4621000" />
     </task>
     <task id="LOCAL-00001" summary="update 1">
       <option name="closed" value="true" />
@@ -220,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749231752435</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update 4(making it to chat and do conversation)">
+      <option name="closed" value="true" />
+      <created>1749274956266</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749274956266</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -235,12 +306,15 @@
     <MESSAGE value="update 1" />
     <MESSAGE value="update 2" />
     <MESSAGE value="update 3(making it close as commanded)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 3(making it close as commanded)" />
+    <MESSAGE value="update 4(making it to chat and do conversation)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 4(making it to chat and do conversation)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/College_Projects$SAM.coverage" NAME="SAM Coverage Results" MODIFIED="1749274439447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$SAM.coverage" NAME="SAM Coverage Results" MODIFIED="1749313623168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/College_Projects$test_token__2_.coverage" NAME="test_token (2) Coverage Results" MODIFIED="1749228767641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/College_Projects$test_token.coverage" NAME="test_token Coverage Results" MODIFIED="1749228708795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/College_Projects$openai_test.coverage" NAME="openai_test Coverage Results" MODIFIED="1749231506749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$SAM__3_.coverage" NAME="SAM (3) Coverage Results" MODIFIED="1749291004250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv310" />
+    <SUITE FILE_PATH="coverage/College_Projects$test_token.coverage" NAME="test_token Coverage Results" MODIFIED="1749309123438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$openai_test.coverage" NAME="openai_test Coverage Results" MODIFIED="1749313267805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$SAM__2_.coverage" NAME="SAM (2) Coverage Results" MODIFIED="1749288019097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv310" />
   </component>
 </project>
