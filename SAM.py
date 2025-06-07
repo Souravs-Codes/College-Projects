@@ -164,6 +164,7 @@ if __name__ == "__main__":
                 pg.click(55, 251)
                 time.sleep(2)
                 pg.click(167, 484)
+                handled = True
 
             if "mood changer" in query:
                 os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
@@ -171,6 +172,7 @@ if __name__ == "__main__":
                 pg.click(48, 343)
                 time.sleep(2)
                 pg.click(167, 484)
+                handled = True
 
             if "bhajan" in query:
                 os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
@@ -178,10 +180,28 @@ if __name__ == "__main__":
                 pg.click(42, 506)
                 time.sleep(2)
                 pg.click(167, 484)
+                handled = True
 
+        if "change the music" in text:
+            os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+            time.sleep(0.7)
+            pg.hotkey('ctrl', 'right')
+            handled = True
+
+        if any(phrase in text for phrase in ["play", "pause", "stop", "resume"  ]):
+            os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+            time.sleep(0.7)
+            pg.press('space')
+            handled = True
+
+        if "change the music" in text:
+            os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+            time.sleep(0.7)
+            pg.hotkey('ctrl', 'right')
+            handled = True
 
         #Shutting down
-        if any(phrase in text for phrase in ["exit", "quit", "stop", "goodbye","rest"]):
+        if any(phrase in text for phrase in ["exit", "quit", "goodbye","rest"]):
             say("Shutting down sir. Goodbye.")
             break
 

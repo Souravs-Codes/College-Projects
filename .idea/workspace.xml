@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fddbc2b0-d423-4fb8-bb95-9c0410a7e322" name="Changes" comment="update 5(searching in google and sending watsapp messages)">
+    <list default="true" id="fddbc2b0-d423-4fb8-bb95-9c0410a7e322" name="Changes" comment="update 6(adding the spotify control panel...more work to do)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAM.py" beforeDir="false" afterPath="$PROJECT_DIR$/SAM.py" afterDir="false" />
     </list>
@@ -256,7 +256,7 @@
       <workItem from="1749294879013" duration="768000" />
       <workItem from="1749295679355" duration="268000" />
       <workItem from="1749305577016" duration="3210000" />
-      <workItem from="1749309097422" duration="6457000" />
+      <workItem from="1749309097422" duration="7418000" />
     </task>
     <task id="LOCAL-00001" summary="update 1">
       <option name="closed" value="true" />
@@ -298,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749313771792</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update 6(adding the spotify control panel...more work to do)">
+      <option name="closed" value="true" />
+      <created>1749315838087</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1749315838087</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -315,14 +323,15 @@
     <MESSAGE value="update 3(making it close as commanded)" />
     <MESSAGE value="update 4(making it to chat and do conversation)" />
     <MESSAGE value="update 5(searching in google and sending watsapp messages)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 5(searching in google and sending watsapp messages)" />
+    <MESSAGE value="update 6(adding the spotify control panel...more work to do)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 6(adding the spotify control panel...more work to do)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/College_Projects$SAM.coverage" NAME="SAM Coverage Results" MODIFIED="1749315476098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$SAM.coverage" NAME="SAM Coverage Results" MODIFIED="1749316515725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/College_Projects$test_token__2_.coverage" NAME="test_token (2) Coverage Results" MODIFIED="1749228767641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/College_Projects$SAM__3_.coverage" NAME="SAM (3) Coverage Results" MODIFIED="1749291004250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv310" />
-    <SUITE FILE_PATH="coverage/College_Projects$test_token.coverage" NAME="test_token Coverage Results" MODIFIED="1749309123438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/College_Projects$openai_test.coverage" NAME="openai_test Coverage Results" MODIFIED="1749314876256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$test_token.coverage" NAME="test_token Coverage Results" MODIFIED="1749315767935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$openai_test.coverage" NAME="openai_test Coverage Results" MODIFIED="1749315694412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/College_Projects$SAM__2_.coverage" NAME="SAM (2) Coverage Results" MODIFIED="1749288019097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv310" />
   </component>
 </project>
