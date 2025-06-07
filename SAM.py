@@ -10,10 +10,6 @@ import pyautogui as pg
 import time
 
 
-
-
-
-
 # Text-to-speech setup
 speaker = win32.Dispatch("SAPI.SpVoice")
 HF_TOKEN = os.getenv("HF_TOKEN")
@@ -80,21 +76,12 @@ def search_youtube(query):
     webbrowser.open(url)
 
 peoples=[["Kushan","8092876654"],["Me","7061973898"],["Papa","6205143357"],["Mummy","9132356424"],["Samrat","7004936302"],["Dadai","7004936302"],["Aryan","9142446712"]]
+apps = [["Spotify", "C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe"],["File","shell:MyComputerFolder"],["Discord","C:\\Users\\win11\\Desktop\\Discord.lnk"]]
+sites = [["Youtube", "https://www.youtube.com/"],["Google", "https://www.google.com/"],["Wikipedia", "https://www.wikipedia.org/"]]
 
 # Main assistant loop
 if __name__ == "__main__":
-
-
-
     say("Hello, I am SAM A.I.")
-
-    apps = [["Spotify", "C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe"],["File","shell:MyComputerFolder"]]
-    sites = [
-        ["Youtube", "https://www.youtube.com/"],
-        ["Google", "https://www.google.com/"],
-        ["Wikipedia", "https://www.wikipedia.org/"]
-    ]
-
 
     while True:
         text = voice().lower()
@@ -132,15 +119,13 @@ if __name__ == "__main__":
             handled = True
             continue
 
-
-
-
-        elif "search youtube" in text:
+        elif "search in youtube" in text:
             say("What should I search on YouTube?")
             query = voice()
             say(f"Searching YouTube for {query}")
             search_youtube(query)
             handled = True
+
         elif "search google" in text:
             say("What should I search on Google?")
             query = voice()
@@ -155,7 +140,7 @@ if __name__ == "__main__":
 
                 os.system("start whatsapp:")  # On Windows
 
-                time.sleep(5)  # wait for app to open
+                time.sleep(3)  # wait for app to open
 
                 pg.click(182, 151)
                 pg.write(person[0])
@@ -167,6 +152,32 @@ if __name__ == "__main__":
                 pg.write(query)
                 pg.press("enter")
 
+
+            #SPOTIFY CONTROLS________________________________________________________________________
+
+        if "play music" in text:
+            say("What should I play Sir?")
+            query = voice().lower()
+            if "Sammy" in query:
+                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+                time.sleep(5)
+                pg.click(55, 251)
+                time.sleep(2)
+                pg.click(167, 484)
+
+            if "mood changer" in query:
+                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+                time.sleep(5)
+                pg.click(48, 343)
+                time.sleep(2)
+                pg.click(167, 484)
+
+            if "bhajan" in query:
+                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+                time.sleep(5)
+                pg.click(42, 506)
+                time.sleep(2)
+                pg.click(167, 484)
 
 
         #Shutting down
