@@ -13,6 +13,26 @@ def say(text):
     speaker.Speak(text)
 
 
+def chat(text):
+    prompt = f" {text}"
+    response = ai(prompt)
+    say(response)
+    token = os.getenv("HF_TOKEN")
+    if not token:
+        return "❌ Hugging Face token not set in environment."
+
+    client = InferenceClient(token=token)
+
+    try:
+        completion = client.chat.completions.create(
+            model="meta-llama/Llama-3-8B-Instruct",
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return completion.choices[0].message.content.strip()
+    except Exception as e:
+        return f"❌ AI error: {e}"
+
+
 # Voice input from user
 def voice():
     r = sr.Recognizer()
@@ -74,7 +94,7 @@ if __name__ == "__main__":
 
         # Report time
         if "the time" in text:
-            current_time = dt.datetime.now().strftime("%H:%M")
+            current_time = dt.datetime.now().strftime("%I:%M:%p")
             say(f"Sir, the time is {current_time}")
 
         # Report date
@@ -89,6 +109,11 @@ if __name__ == "__main__":
             print("Researching.....")
             ai_response = ai(user_prompt)
             say(ai_response)
-        if any(phrase in text for phrase in ["exit", "quit", "close", "stop", "goodbye","rest"]):
+
+        #Shutting down
+        elif any(phrase in text for phrase in ["exit", "quit", "close", "stop", "goodbye","rest"]):
             say("Shutting down sir. Goodbye.")
             break
+
+        else:
+            chat(text)
