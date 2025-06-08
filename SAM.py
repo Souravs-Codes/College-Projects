@@ -105,6 +105,7 @@ if __name__ == "__main__":
                 break
 
 
+
         # Report time
         if "the time" in text:
             current_time = dt.datetime.now().strftime("%I:%M:%p")
@@ -119,7 +120,7 @@ if __name__ == "__main__":
             handled = True
             continue
 
-        elif "search in youtube" in text:
+        elif "search youtube" in text:
             say("What should I search on YouTube?")
             query = voice()
             say(f"Searching YouTube for {query}")
@@ -132,6 +133,18 @@ if __name__ == "__main__":
             say(f"Searching Google for {query}")
             webbrowser.open(f"https://www.google.com/search?q={query}")
             handled = True
+
+        if "close browser" in text:
+            pg.click(877, 1061)
+            time.sleep(0.5)
+            say("Closing Browser Sir...")
+            pg.hotkey('alt', 'f4')
+            handled = True
+
+        if "open whatsapp" in text:
+            say("Opening whatsapp Sir...")
+            os.system("start whatsapp:")
+
 
         for person in peoples:
             if f"send message to {person[0].lower()}" in text:
@@ -151,6 +164,15 @@ if __name__ == "__main__":
                 time.sleep(0.5)
                 pg.write(query)
                 pg.press("enter")
+                time.sleep(0.5)
+                pg.click(1035, 1057)
+
+        if any(phrase in text for phrase in ["close message", "close whatsapp"]):
+            os.system("start whatsapp:")
+            time.sleep(0.5)
+            say("Closing Whatsapp Sir...")
+            pg.hotkey('alt', 'f4')
+            handled = True
 
 
             #SPOTIFY CONTROLS________________________________________________________________________
@@ -221,6 +243,17 @@ if __name__ == "__main__":
             time.sleep(0.2)
             pg.click(932, 1048)
             handled = True
+
+        if "close the music" in text:
+            os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+            time.sleep(0.7)
+            say("Closing Spotify Sir...")
+            pg.hotkey('alt', 'f4')
+
+            handled = True
+
+
+
 
         #Shutting down
         if any(phrase in text for phrase in ["exit", "quit", "goodbye","rest"]):
