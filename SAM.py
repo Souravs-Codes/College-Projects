@@ -79,9 +79,20 @@ peoples=[["Kushan","8092876654"],["Me","7061973898"],["Papa","6205143357"],["Mum
 apps = [["Spotify", "C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe"],["File","shell:MyComputerFolder"],["Discord","C:\\Users\\win11\\Desktop\\Discord.lnk"]]
 sites = [["Youtube", "https://www.youtube.com/"],["Google", "https://www.google.com/"],["Wikipedia", "https://www.wikipedia.org/"]]
 
+
+
+
+
+def play_spotify_playlist(x,y):
+    os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+    time.sleep(8)
+    pg.click(x,y)  # Click on playlist
+    time.sleep(0.2)
+    pg.click(932, 1048)
+
 # Main assistant loop
 if __name__ == "__main__":
-    say("Hello, I am SAM A.I.")
+    say("Hello, I am SAM , an Simple Artificial Manager")
 
     while True:
         text = voice().lower()
@@ -134,8 +145,12 @@ if __name__ == "__main__":
             webbrowser.open(f"https://www.google.com/search?q={query}")
             handled = True
 
-        if "close browser" in text:
-            pg.click(877, 1061)
+        if "open the browser" in text:
+            os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
+            handled = True
+
+        if "close the browser" in text:
+            os.startfile("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
             time.sleep(0.5)
             say("Closing Browser Sir...")
             pg.hotkey('alt', 'f4')
@@ -150,11 +165,8 @@ if __name__ == "__main__":
             if f"send message to {person[0].lower()}" in text:
                 say("What message should I send Sir?")
                 query = voice()
-
-                os.system("start whatsapp:")  # On Windows
-
-                time.sleep(3)  # wait for app to open
-
+                os.system("start whatsapp:")
+                time.sleep(3)
                 pg.click(182, 151)
                 pg.write(person[0])
                 pg.click(324, 242)
@@ -181,44 +193,17 @@ if __name__ == "__main__":
             say("From which playlist should I play Sir?")
             query = voice().lower()
             if "playlist" in query:
-                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
-                time.sleep(8)
-                pg.click(54, 256)
-                time.sleep(2)
-                pg.click(167, 484)
-                time.sleep(0.2)
-                pg.click(932, 1048)
-                handled = True
+                play_spotify_playlist(54,256)
 
             if "disco" in query:
-                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
-                time.sleep(8)
-                pg.click(49, 422)
-                time.sleep(2)
-                pg.click(167, 484)
-                time.sleep(0.2)
-                pg.click(932, 1048)
-                handled = True
+                play_spotify_playlist(49,422)
 
             if "bhajan" in query:
-                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
-                time.sleep(8)
-                pg.click(42, 506)
-                time.sleep(2)
-                pg.click(167, 484)
-                time.sleep(0.2)
-                pg.click(932, 1048)
-                handled = True
+                play_spotify_playlist(42,506)
 
             if "bus" in query:
-                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
-                time.sleep(8)
-                pg.click(58, 487)
-                time.sleep(2)
-                pg.click(167, 484)
-                time.sleep(0.2)
-                pg.click(932, 1048)
-                handled = True
+                play_spotify_playlist(58,487)
+
 
         if "change the music" in text:
             pg.click(932, 1048)
@@ -245,61 +230,32 @@ if __name__ == "__main__":
             handled = True
 
         if "change the playlist" in text:
-            say("Which playlist should I play Sir?")
+            say("From which playlist should I play Sir?")
             query = voice().lower()
             if "playlist" in query:
-                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
-                time.sleep(8)
-                pg.click(54, 256)
-                time.sleep(2)
-                pg.click(167, 484)
-                time.sleep(0.2)
-                pg.click(932, 1048)
-                handled = True
+                play_spotify_playlist(54, 256)
 
             if "disco" in query:
-                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
-                time.sleep(8)
-                pg.click(49, 422)
-                time.sleep(2)
-                pg.click(167, 484)
-                time.sleep(0.2)
-                pg.click(932, 1048)
-                handled = True
+                play_spotify_playlist(49, 422)
 
             if "bhajan" in query:
-                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
-                time.sleep(8)
-                pg.click(42, 506)
-                time.sleep(2)
-                pg.click(167, 484)
-                time.sleep(0.2)
-                pg.click(932, 1048)
-                handled = True
+                play_spotify_playlist(42, 506)
 
             if "bus" in query:
-                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
-                time.sleep(8)
-                pg.click(58, 487)
-                time.sleep(2)
-                pg.click(167, 484)
-                time.sleep(0.2)
-                pg.click(932, 1048)
-                handled = True
+                play_spotify_playlist(58, 487)
 
         if "close the music" in text:
             os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
             time.sleep(0.7)
             say("Closing Spotify Sir...")
             pg.hotkey('alt', 'f4')
-
             handled = True
 
 
 
 
         #Shutting down
-        if any(phrase in text for phrase in ["exit", "quit", "goodbye","rest"]):
+        if any(phrase in text for phrase in ["exit", "quit", "goodbye","rest","shut down","shutdown"]):
             say("Shutting down sir, Goodbye.")
             break
 
