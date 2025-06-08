@@ -178,7 +178,7 @@ if __name__ == "__main__":
             #SPOTIFY CONTROLS________________________________________________________________________
 
         if "play music" in text:
-            say("What should I play Sir?")
+            say("From which playlist should I play Sir?")
             query = voice().lower()
             if "playlist" in query:
                 os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
@@ -243,6 +243,49 @@ if __name__ == "__main__":
             time.sleep(0.2)
             pg.click(932, 1048)
             handled = True
+
+        if "change the playlist" in text:
+            say("Which playlist should I play Sir?")
+            query = voice().lower()
+            if "playlist" in query:
+                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+                time.sleep(8)
+                pg.click(54, 256)
+                time.sleep(2)
+                pg.click(167, 484)
+                time.sleep(0.2)
+                pg.click(932, 1048)
+                handled = True
+
+            if "disco" in query:
+                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+                time.sleep(8)
+                pg.click(49, 422)
+                time.sleep(2)
+                pg.click(167, 484)
+                time.sleep(0.2)
+                pg.click(932, 1048)
+                handled = True
+
+            if "bhajan" in query:
+                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+                time.sleep(8)
+                pg.click(42, 506)
+                time.sleep(2)
+                pg.click(167, 484)
+                time.sleep(0.2)
+                pg.click(932, 1048)
+                handled = True
+
+            if "bus" in query:
+                os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+                time.sleep(8)
+                pg.click(58, 487)
+                time.sleep(2)
+                pg.click(167, 484)
+                time.sleep(0.2)
+                pg.click(932, 1048)
+                handled = True
 
         if "close the music" in text:
             os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
