@@ -428,7 +428,7 @@ class SAMApp:
                 handled = True
 
             if "change the playlist" in text:
-                say("SAM: From which playlist should I play Sir?")
+                say("From which playlist should I play Sir?")
                 query = long_voice().lower()
                 if "playlist" in query:
                     self.show_text(f"You: {text}")
