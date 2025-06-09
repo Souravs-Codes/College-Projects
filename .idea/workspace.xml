@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fddbc2b0-d423-4fb8-bb95-9c0410a7e322" name="Changes" comment="update 12(Renamed the files and created a application like interface .)">
+    <list default="true" id="fddbc2b0-d423-4fb8-bb95-9c0410a7e322" name="Changes" comment="update 13(minor changes to code and Application made successfully.)">
       <change afterPath="$PROJECT_DIR$/venv39/SAM_EXE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAM_exe.py" beforeDir="false" afterPath="$PROJECT_DIR$/SAM_final_exe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAM_final_exe.py" beforeDir="false" afterPath="$PROJECT_DIR$/SAM_final_exe.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,7 +344,7 @@
       <workItem from="1749451958450" duration="2085000" />
       <workItem from="1749454076235" duration="420000" />
       <workItem from="1749454518091" duration="239000" />
-      <workItem from="1749455182286" duration="2000000" />
+      <workItem from="1749455182286" duration="3044000" />
     </task>
     <task id="LOCAL-00001" summary="update 1">
       <option name="closed" value="true" />
@@ -467,7 +466,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749450781715</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update 13(minor changes to code and Application made successfully.)">
+      <option name="closed" value="true" />
+      <created>1749457295106</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1749457295106</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update 13(minor changes to code and Application made successfully.)">
+      <option name="closed" value="true" />
+      <created>1749457489409</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1749457489409</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -491,11 +506,12 @@
     <MESSAGE value="update 10(added the change playlist in spotify control features...)" />
     <MESSAGE value="update 11(minor changes in spotify control features...)" />
     <MESSAGE value="update 12(Renamed the files and created a application like interface .)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 12(Renamed the files and created a application like interface .)" />
+    <MESSAGE value="update 13(minor changes to code and Application made successfully.)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 13(minor changes to code and Application made successfully.)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/College_Projects$SAM.coverage" NAME="SAM Coverage Results" MODIFIED="1749389560981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/College_Projects$SAM_final_exe.coverage" NAME="SAM_final_exe Coverage Results" MODIFIED="1749457060790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$SAM_final_exe.coverage" NAME="SAM_final_exe Coverage Results" MODIFIED="1749458186066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/College_Projects$test_token__2_.coverage" NAME="test_token (2) Coverage Results" MODIFIED="1749228767641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/College_Projects$SAM__3_.coverage" NAME="SAM (3) Coverage Results" MODIFIED="1749291004250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv310" />
     <SUITE FILE_PATH="coverage/College_Projects$SAM_exe.coverage" NAME="SAM_exe Coverage Results" MODIFIED="1749455425901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

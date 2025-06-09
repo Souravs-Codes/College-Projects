@@ -95,15 +95,17 @@ def long_voice():
         except sr.WaitTimeoutError:
             return "Listening timed out, please speak louder or faster."
         except Exception:
-            return "Say that again please..."
+            return ""
 
 def voice():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         audio = r.listen(source)
-        query = r.recognize_google(audio, language='en-in')
-        return query
-
+        try:
+            query = r.recognize_google(audio, language='en-in')
+            return query
+        except Exception:
+            return "Say that again please..."
 
 
 def search_youtube(query):
