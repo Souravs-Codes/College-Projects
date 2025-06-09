@@ -21,7 +21,7 @@ def say(text):
 
 
 # Chat replies and basic conversation
-def chat(text):
+"""def chat(text):
     token = os.getenv("HF_TOKEN")
     if not token or not client:
         error_msg = "❌ Hugging Face token not set or client not initialized."
@@ -39,7 +39,7 @@ def chat(text):
     except Exception as e:
         error_msg = f"❌ AI error: {e}"
         say(error_msg)
-        return error_msg
+        return error_msg"""
 
 # Voice input from user
 def voice():
@@ -56,7 +56,7 @@ def voice():
             return "Say that again please..."
 
 # Hugging Face AI interaction
-def ai(prompt: str) -> str:
+"""def ai(prompt: str) -> str:
     if not HF_TOKEN or not client:
         return "❌ Hugging Face token not set or client not initialized."
 
@@ -67,7 +67,7 @@ def ai(prompt: str) -> str:
         )
         return completion.choices[0].message.content.strip()
     except Exception as e:
-        return f"❌ AI error: {e}"
+        return f"❌ AI error: {e}"""
 
 #searching in youtube
 def search_youtube(query):
@@ -87,6 +87,17 @@ def play_spotify_playlist(x,y):
     os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
     time.sleep(8)
     pg.click(x,y)  # Click on playlist
+    time.sleep(0.2)
+    pg.click(168,472)
+    time.sleep(0.2)
+    pg.click(932, 1048)
+
+def control_spotify_playlist(x,y):
+    os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
+    time.sleep(1)
+    pg.click(x,y)  # Click on playlist
+    time.sleep(0.2)
+    pg.click(168, 472)
     time.sleep(0.2)
     pg.click(932, 1048)
 
@@ -233,16 +244,16 @@ if __name__ == "__main__":
             say("From which playlist should I play Sir?")
             query = voice().lower()
             if "playlist" in query:
-                play_spotify_playlist(54, 256)
+                control_spotify_playlist(54, 256)
 
             if "disco" in query:
-                play_spotify_playlist(49, 422)
+                control_spotify_playlist(49, 422)
 
             if "bhajan" in query:
-                play_spotify_playlist(42, 506)
+                control_spotify_playlist(42, 506)
 
             if "bus" in query:
-                play_spotify_playlist(58, 487)
+                control_spotify_playlist(58, 487)
 
         if "close the music" in text:
             os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")

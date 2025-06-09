@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fddbc2b0-d423-4fb8-bb95-9c0410a7e322" name="Changes" comment="update 10(added the change playlist in spotify control features...)">
+    <list default="true" id="fddbc2b0-d423-4fb8-bb95-9c0410a7e322" name="Changes" comment="update 11(minor changes in spotify control features...)">
+      <change afterPath="$PROJECT_DIR$/SAM_GUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAM.py" beforeDir="false" afterPath="$PROJECT_DIR$/SAM.py" afterDir="false" />
     </list>
@@ -18,6 +19,17 @@
       <list>
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -36,7 +48,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/SAM.py" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SAM.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv310/SAM.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -46,29 +59,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.SAM (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python.SAM (3).executor&quot;: &quot;Run&quot;,
-    &quot;Python.SAM.executor&quot;: &quot;Run&quot;,
-    &quot;Python.openai test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.openai_test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_token (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_token.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Run Streamlit App.executor": "Run",
+    "Python.SAM (2).executor": "Run",
+    "Python.SAM (3).executor": "Run",
+    "Python.SAM.executor": "Run",
+    "Python.SAM_GUI.executor": "Run",
+    "Python.openai test.executor": "Run",
+    "Python.openai_test.executor": "Run",
+    "Python.run streamlit.executor": "Run",
+    "Python.test_token (2).executor": "Run",
+    "Python.test_token.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
+    <configuration name="Run Streamlit App" type="PythonConfigurationType" factoryName="Python">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="&quot;D:\PYCHARM PROJECTS\College-Projects&quot;" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="streamlit" />
+      <option name="PARAMETERS" value="-m streamlit run &quot;$PROJECT_DIR$/test_token.py&quot;" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="SAM (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -165,6 +204,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="run streamlit" type="PythonConfigurationType" factoryName="Python">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\PYCHARM PROJECTS\College-Projects" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="Run Streamlit" />
+      <option name="PARAMETERS" value="-m streamlit run $PROJECT_DIR$/test_token.py" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test_token (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
@@ -213,11 +275,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.run streamlit" />
+      <item itemvalue="Python.Run Streamlit App" />
+      <item itemvalue="Python.openai_test" />
+      <item itemvalue="Python.SAM" />
+      <item itemvalue="Python.SAM (2)" />
+      <item itemvalue="Python.SAM (3)" />
+      <item itemvalue="Python.test_token" />
+      <item itemvalue="Python.test_token (2)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.SAM" />
-        <item itemvalue="Python.openai_test" />
         <item itemvalue="Python.test_token" />
+        <item itemvalue="Python.openai_test" />
         <item itemvalue="Python.SAM (3)" />
         <item itemvalue="Python.SAM (2)" />
       </list>
@@ -260,7 +332,12 @@
       <workItem from="1749295679355" duration="268000" />
       <workItem from="1749305577016" duration="3210000" />
       <workItem from="1749309097422" duration="7498000" />
-      <workItem from="1749377801100" duration="5241000" />
+      <workItem from="1749377801100" duration="6850000" />
+      <workItem from="1749384719725" duration="230000" />
+      <workItem from="1749385013897" duration="1195000" />
+      <workItem from="1749386257593" duration="1758000" />
+      <workItem from="1749388057018" duration="2209000" />
+      <workItem from="1749437662336" duration="11321000" />
     </task>
     <task id="LOCAL-00001" summary="update 1">
       <option name="closed" value="true" />
@@ -342,7 +419,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749381154833</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update 11(minor changes in spotify control features...)">
+      <option name="closed" value="true" />
+      <created>1749383261594</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1749383261594</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -364,14 +449,17 @@
     <MESSAGE value="update 8(updating the spotify control features...)" />
     <MESSAGE value="update 9(minor changes spotify control features...)" />
     <MESSAGE value="update 10(added the change playlist in spotify control features...)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 10(added the change playlist in spotify control features...)" />
+    <MESSAGE value="update 11(minor changes in spotify control features...)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 11(minor changes in spotify control features...)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/College_Projects$SAM.coverage" NAME="SAM Coverage Results" MODIFIED="1749383062860" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$SAM.coverage" NAME="SAM Coverage Results" MODIFIED="1749389560981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/College_Projects$test_token__2_.coverage" NAME="test_token (2) Coverage Results" MODIFIED="1749228767641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/College_Projects$SAM__3_.coverage" NAME="SAM (3) Coverage Results" MODIFIED="1749291004250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv310" />
-    <SUITE FILE_PATH="coverage/College_Projects$test_token.coverage" NAME="test_token Coverage Results" MODIFIED="1749378022572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/College_Projects$openai_test.coverage" NAME="openai_test Coverage Results" MODIFIED="1749382280769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$SAM_GUI.coverage" NAME="SAM_GUI Coverage Results" MODIFIED="1749450205148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$test_token.coverage" NAME="test_token Coverage Results" MODIFIED="1749385548105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/College_Projects$openai_test.coverage" NAME="openai_test Coverage Results" MODIFIED="1749448202232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/College_Projects$SAM__2_.coverage" NAME="SAM (2) Coverage Results" MODIFIED="1749288019097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv310" />
+    <SUITE FILE_PATH="coverage/College_Projects$run_streamlit.coverage" NAME="run streamlit Coverage Results" MODIFIED="1749385556604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:\PYCHARM PROJECTS\College-Projects" />
   </component>
 </project>
