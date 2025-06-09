@@ -38,7 +38,7 @@ def say(text):
         return response
     except Exception as e:
         error_msg = f"❌ AI error: {e}"
-        say(error_msg)
+        say(error_msg
         return error_msg"""
 
 # Voice input from user

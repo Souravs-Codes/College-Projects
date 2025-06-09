@@ -172,7 +172,7 @@ class SAMApp:
         self.show_text("🤖 SAM: Hello, I am SAM, your Simple AI Manager.")
         self.text_area.update_idletasks()
 
-        say_blocking("Hello, I am SAM, your Simple AI Manager.")
+        say_blocking("Hello, I am SAM, your Simple AI Manager..")
 
         self.show_text("🔊 Started listening...")
 
