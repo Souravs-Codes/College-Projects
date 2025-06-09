@@ -14,6 +14,19 @@ import pyautogui as pg
 import time
 from tkinter import scrolledtext
 from serpapi import GoogleSearch
+import sys
+
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 
 SERPAPI_KEY = "1596eee6d574a0e6a659fea634809a4d5296916880c36c7e6a3344a453d9ac67"
 def google_search_summary(query):
@@ -70,17 +83,28 @@ def say(text):
 def say_blocking(text):
     speaker.Speak(text)
 
-
+def long_voice():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        r.adjust_for_ambient_noise(source, duration=1)
+        print("Listening (long)...")
+        try:
+            audio = r.listen(source, timeout=5, phrase_time_limit=7)
+            query = r.recognize_google(audio, language='en-in')
+            return query
+        except sr.WaitTimeoutError:
+            return "Listening timed out, please speak louder or faster."
+        except Exception:
+            return "Say that again please..."
 
 def voice():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         audio = r.listen(source)
-        try:
-            query = r.recognize_google(audio, language='en-in')
-            return query
-        except Exception:
-            return "Say that again please..."
+        query = r.recognize_google(audio, language='en-in')
+        return query
+
+
 
 def search_youtube(query):
     search = urllib.parse.quote_plus(query)
@@ -93,11 +117,11 @@ sites = [["Youtube", "https://www.youtube.com/"], ["Google", "https://www.google
 
 def play_spotify_playlist(x, y):
     os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
-    time.sleep(8)
+    time.sleep(5)
     pg.click(x, y)
-    time.sleep(0.2)
+    time.sleep(1)
     pg.click(168, 472)
-    time.sleep(0.2)
+    time.sleep(0.5)
     pg.click(932, 1048)
 
 def control_spotify_playlist(x, y):
@@ -160,7 +184,8 @@ class SAMApp:
         self.text_area.place(relx=0.05, rely=0.65, relwidth=0.9, relheight=0.25)
         self.text_area.configure(state='disabled')
 
-        self.cap = cv2.VideoCapture("Particle.mp4")
+        self.cap = cv2.VideoCapture(resource_path("Particle.mp4"))
+
         self.running = True
         self.listening_thread = threading.Thread(target=self.listen_and_respond)
         self.listening_thread.start()
@@ -243,7 +268,7 @@ class SAMApp:
             elif "search youtube" in text:
                 self.show_text("🤖 SAM: What should I search on YouTube?")
                 say("What should I search on YouTube?")
-                query = voice()
+                query = long_voice().lower()
                 self.show_text(f"🤖 SAM: Searching YouTube for {query}")
                 say(f"Searching YouTube for {query}")
                 search_youtube(query)
@@ -256,7 +281,7 @@ class SAMApp:
             elif "search google" in text:
                 self.show_text("🤖 SAM: What should I search on Google?")
                 say("What should I search on Google?")
-                query = voice()
+                query = long_voice().lower()
                 self.show_text(f"🤖 SAM: Searching Google for {query}")
                 say(f"Searching Google for {query}")
                 summary, top_link = google_search_summary(query)
@@ -265,7 +290,7 @@ class SAMApp:
                 if top_link:
                     self.show_text("🤖 SAM: Should I open the webpage for this information?")
                     say("Should I open the webpage for this information? Please say yes or no.")
-                    confirmation = voice().lower()
+                    confirmation = long_voice().lower()
                     self.show_text(f"You: {confirmation}")
                     if "yes" in confirmation or "open" in confirmation:
                         self.show_text("🤖 SAM: Opening the page now.")
@@ -297,10 +322,10 @@ class SAMApp:
             if "send message" in text:
                 self.show_text("🤖 SAM: Who should I message Sir?")
                 say(f"Who should I message Sir?")
-                person=voice().lower()
+                person=long_voice().lower()
                 self.show_text("🤖 SAM: What message should I send Sir?")
                 say("What message should I send Sir?")
-                query = voice()
+                query = long_voice().lower()
                 self.show_text(f"You: {query}")
                 self.show_text(f"🤖 SAM: Sending Sir to {person}...")
                 os.system("start whatsapp:")
@@ -332,7 +357,7 @@ class SAMApp:
                 self.show_text(f"You: {text}")
                 self.show_text("🤖 SAM: From which playlist should I play Sir?")
                 say("From which playlist should I play Sir?")
-                query = voice().lower()
+                query = long_voice().lower()
                 if "playlist" in query:
                     self.show_text(f"You: {text}")
                     self.show_text("🤖 SAM: Playing from Your Playlist Sir...")
@@ -403,8 +428,8 @@ class SAMApp:
                 handled = True
 
             if "change the playlist" in text:
-                say("🤖 SAM: From which playlist should I play Sir?")
-                query = voice().lower()
+                say("SAM: From which playlist should I play Sir?")
+                query = long_voice().lower()
                 if "playlist" in query:
                     self.show_text(f"You: {text}")
                     self.show_text("🤖 SAM: Changing Your Playlist Sir...")
