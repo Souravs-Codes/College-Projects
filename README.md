@@ -66,7 +66,7 @@
 
 ## ⚙️ Installation
 
-1. Clone the repository  
+1.**Clone the repository**  
    ```bash
-   git clone https://github.com/Souravs-Codes/ai-voice-assistant.git
-   cd ai-voice-assistant
+   git clone https://github.com/Souravs-Codes/SAM-Small-version-of-JARVIS-.git
+   cd SAM-Small-version-of-JARVIS-
