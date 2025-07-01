@@ -9,7 +9,6 @@ import speech_recognition as sr
 import webbrowser
 import datetime as dt
 import win32com.client as win32
-import pywhatkit as pw
 import pyautogui as pg
 import time
 from tkinter import scrolledtext
@@ -17,10 +16,9 @@ from serpapi import GoogleSearch
 import sys
 
 
+
 def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
         base_path = sys._MEIPASS
     except AttributeError:
         base_path = os.path.abspath(".")
@@ -42,7 +40,7 @@ def google_search_summary(query):
     try:
         lines = []
 
-        # Answer box info
+
         box = results.get("answer_box", {})
         if "snippet" in box:
             lines.append(box["snippet"])
@@ -53,14 +51,14 @@ def google_search_summary(query):
         elif "highlighted_snippet" in box:
             lines.append(box["highlighted_snippet"])
 
-        # Organic snippets
+
         organic = results.get("organic_results", [])
         for res in organic[:2]:
             snippet = res.get("snippet")
             if snippet:
                 lines.append(snippet)
 
-        # Get the first organic result's link
+
         top_link = organic[0]['link'] if organic else None
 
         if lines:
@@ -71,11 +69,9 @@ def google_search_summary(query):
     except Exception:
         return "Something went wrong while retrieving the search results.", None
 
-
-
-
-# Text-to-speech setup
 speaker = win32.Dispatch("SAPI.SpVoice")
+voices = speaker.GetVoices()
+speaker.Voice = voices.Item(0)
 
 def say(text):
     threading.Thread(target=speaker.Speak, args=(text,), daemon=True).start()
@@ -126,6 +122,7 @@ def play_spotify_playlist(x, y):
     time.sleep(0.5)
     pg.click(932, 1048)
 
+
 def control_spotify_playlist(x, y):
     os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
     time.sleep(1)
@@ -142,12 +139,25 @@ class SAMApp:
         self.root.geometry("900x600")
         self.root.configure(bg='black')
 
-
         # Background
-        self.canvas = tk.Label(self.root, bg="black")
+
+        self.original_bg_image = Image.open(resource_path("D:\\PYCHARM PROJECTS\\College-Projects\\JARVIS.jpg"))
+        self.bg_photo = ImageTk.PhotoImage(self.original_bg_image)
+        self.canvas = tk.Label(self.root, image=self.bg_photo)
+        self.canvas.place(relx=0, rely=0, relwidth=1, relheight=1)
+        self.root.bind("<Configure>", self.resize_background)
+        self.root.bind("<Configure>", self.resize_background)
+
+    # Load and place background image
+        image_path = resource_path("D:\\PYCHARM PROJECTS\\College-Projects\\JARVIS.jpg")
+        bg_image = Image.open(image_path)
+        bg_image = bg_image.resize((900, 600), Image.Resampling.LANCZOS)  # Resize to match window
+        self.bg_photo = ImageTk.PhotoImage(bg_image)
+        self.canvas = tk.Label(self.root, image=self.bg_photo)
         self.canvas.place(relx=0, rely=0, relwidth=1, relheight=1)
 
-        # Title label
+
+# Title label
         self.title_label = tk.Label(
             self.root,
             text="SAM - Simple AI Manager",
@@ -169,7 +179,6 @@ class SAMApp:
             fg="white",
             font=("Arial", 8)
         )
-
         self.watermark.place(relx=0.957, rely=0.65, anchor="se", x=-5)
         self.watermark.lift()  # bring it above everything
 
@@ -185,41 +194,19 @@ class SAMApp:
         )
         self.text_area.place(relx=0.05, rely=0.65, relwidth=0.9, relheight=0.25)
         self.text_area.configure(state='disabled')
-
-        self.cap = cv2.VideoCapture(resource_path("Particle.mp4"))
-
+        self.background= cv2.imread(resource_path("D:\\PYCHARM PROJECTS\\College-Projects\\JARVIS.jpg"))
         self.running = True
         self.listening_thread = threading.Thread(target=self.listen_and_respond)
         self.listening_thread.start()
-
         self.root.after(1000, self.introduce_sam)
-        self.root.after(10, self.update_video)
+
 
     def introduce_sam(self):
         self.show_text("🤖 SAM: Hello, I am SAM, your Simple AI Manager.")
         self.text_area.update_idletasks()
-
         say_blocking("Hello, I am SAM, your Simple AI Manager..")
-
         self.show_text("🔊 Started listening...")
-
-
         self.start_listening()
-
-    def update_video(self):
-        ret, frame = self.cap.read()
-        if ret:
-            width = self.root.winfo_width()
-            height = self.root.winfo_height()
-            frame = cv2.resize(frame, (width, height))
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            img = ImageTk.PhotoImage(Image.fromarray(frame))
-            self.canvas.configure(image=img)
-            self.canvas.image = img
-        else:
-            self.cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
-
-        self.root.after(30, self.update_video)
 
     def start_listening(self):
         if not self.running:
@@ -227,11 +214,20 @@ class SAMApp:
             self.listening_thread = threading.Thread(target=self.listen_and_respond)
             self.listening_thread.start()
 
-
+    def resize_background(self, event):
+        if event.widget == self.root:
+            new_width = event.width
+            new_height = event.height
+            resized_image = self.original_bg_image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+            self.bg_photo = ImageTk.PhotoImage(resized_image)
+            self.canvas.configure(image=self.bg_photo)
+            self.canvas.image = self.bg_photo
 
     def listen_and_respond(self):
+        youtube_open=False
         while self.running:
             text = voice().lower()
+            handled = False
             self.show_text(f"You: {text}")
             # You can implement custom response logic here
             for site in sites:
@@ -251,7 +247,7 @@ class SAMApp:
                     handled = True
                     break
 
-            # Report time
+            #  Time
             if "the time" in text:
                 current_time = dt.datetime.now().strftime("%I:%M:%p")
                 self.show_text(f"🤖 SAM: Sir, the time is {current_time}")
@@ -259,7 +255,7 @@ class SAMApp:
                 handled = True
                 continue
 
-            # Report date
+            # Date
             elif "date" in text:
                 current_date = dt.datetime.now().strftime("%d-%m-%Y")
                 self.show_text(f"🤖 SAM: Sir, the date is {current_date}")
@@ -274,11 +270,8 @@ class SAMApp:
                 self.show_text(f"🤖 SAM: Searching YouTube for {query}")
                 say(f"Searching YouTube for {query}")
                 search_youtube(query)
+                youtube_open = True
                 handled = True
-
-
-
-
 
             elif "search google" in text:
                 self.show_text("🤖 SAM: What should I search on Google?")
@@ -462,7 +455,7 @@ class SAMApp:
                 say(f"Closing Spotify Sir...")
                 os.startfile("C:\\Users\\win11\\AppData\\Roaming\\Spotify\\Spotify.exe")
                 time.sleep(0.7)
-                say("Closing Spotify Sir...")
+
                 pg.hotkey('alt', 'f4')
                 handled = True
 
